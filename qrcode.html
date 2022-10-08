@@ -8,7 +8,8 @@
     <!--<script type="text/javascript" src="./jkm/js/jquery.qrcode.min.js?v=1"></script>
 -->
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./qrcode.min.js"></script>
+    <script type="text/javascript" src="学号姓名登录_files/jquery-2.1.4.min.js"></script>
+	<script src="查看出校二维码 - 查看出校二维码_files/qrcode.min.js" type="text/javascript" charset="utf-8"></script>
 <style>
   * {
     margin: 0;
@@ -169,7 +170,7 @@
             'm+': this.getMinutes(), //分
             's+': this.getSeconds(), //秒
             'q+': Math.floor((this.getMonth() + 3) / 3), //季度
-            S: this.getMilliseconds(), //毫秒
+            "S": this.getMilliseconds(), //毫秒
         }
         if (/(y+)/.test(fmt)) {
             fmt = fmt.replace(
@@ -233,8 +234,8 @@
         })
     }
 
-    const url = 'https://nya.fish/rick#123456789012345678901234567890qwertyuiop'
-    $('#div_ewm').html(createQrCode(url, qrColor))
+    // const url = 'https://nya.fish/rick#123456789012345678901234567890qwertyuiop'
+    // $('#div_ewm').html(createQrCode(url, qrColor))
 
     
     if (isJx){
@@ -246,7 +247,8 @@
         date.setMinutes(59)
         const endTime = date.format('yyyy-MM-dd hh:mm')
         $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
-    }
+		//document.getElementById('div_yxsj').innerHTML("123456")
+	}
     else{
 	rnd=Math.round(Math.random()*59);
         const date = new Date()
@@ -256,7 +258,8 @@
         date.setHours(date.getHours() + 2)
 	date.setMinutes(0)
         const endTime = date.format('yyyy-MM-dd hh:mm')
-        $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
+        $("#div_yxsj").html('有效时间：' + startTime + '至' + endTime)
+		//document.getElementById('div_yxsj').innerHTML("123456")
     }
 
 
